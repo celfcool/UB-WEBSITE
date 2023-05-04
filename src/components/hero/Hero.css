@@ -1,0 +1,59 @@
+.hero {
+    background: url("../../assets/images/hero-banner-5.png") no-repeat ;
+    background-size: cover;
+    background-position: top center;
+    margin-top: 90px;
+    padding: var(--section-padding) 0;
+    height: 100vh;
+    max-height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: var(--fs-2) !important;
+    background: -webkit-linear-gradient(var(--platinum), var(--onyx));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--brand-red);
+  }
+
+  .hero-subtitle {
+    color: var(--white);
+    font-family: var(--ff-oswald);
+    font-size: var(--fs-8);
+    font-weight: var(--fw-500);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    text-shadow: 0 7px hsla(0, 0%, 0%, 0.4);
+    margin-bottom: 15px;
+  }
+  /*
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero .btn-primary ion-icon { font-size: 25px; }
+*/
+  @media (min-width: 768px) {
+    .hero-subtitle {
+      --fs-8: 25px;
+      letter-spacing: 12px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .hero { margin-top: 110px; }
+    .hero-title {
+      font-size: var(--fs-1) !important;
+      -webkit-text-stroke: 2px var(--brand-red);
+    }
+  }
+  
+  
+  
