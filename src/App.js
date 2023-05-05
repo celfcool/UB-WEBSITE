@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -9,8 +9,16 @@ import { News } from "./pages/news/News";
 import { TeamPage } from "./pages/team-page/TeamPage";
 import { Player } from "./pages/player/Player";
 import { Contact } from "./pages/contact/Contact";
+import { useDispatch } from "react-redux";
+import { fetchHero } from "./store/actions";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchHero());
+  }, [dispatch]);
+
   return (
     <>
       <Navbar />

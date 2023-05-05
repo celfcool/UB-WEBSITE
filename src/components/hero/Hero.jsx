@@ -1,28 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import './Hero.css'
-import axios from "axios";
+import { useSelector } from 'react-redux';
 
 function Hero() {
-  const [title, setTitle] = useState("");
-  const [subtitle, setSubtitle] = useState("");
-
-  useEffect(() => {
-    async function getData() {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/hero`);
-      console.log(response);
-      setTitle(response.data.title);
-      setSubtitle(response.data.subtitle);
-    }
-    getData();
-  }, []);
+  const data = useSelector(state => state.data);
   return (
     <>
       <section className="hero" id="hero">
         <div className="container">
 
-          <h1 className="h1 hero-title">{title}</h1>
+          <h1 className="h1 hero-title">{data?.title}</h1>
 
-          <p className="hero-subtitle">{subtitle}</p>
+          <p className="hero-subtitle">{data?.subtitle}</p>
 
         </div>
       </section>
